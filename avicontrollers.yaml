@@ -12,7 +12,7 @@
 
     - name: Download software
       get_url:
-        url: "https://avinetworks.com/software-downloads/Version-17.2.9/docker_install-17.2.9-9001.tar.gz?Signature=ur7ZnFsyes9secoj5F4SQVAarhI%3D&Expires=1525299960&AWSAccessKeyId=AKIAIXO5A5YMNLOVWNBQ"
+        url: "https://avinetworks.com/software-downloads/Version-17.2.9/docker_install-17.2.9-9001.tar.gz?S****"
         dest: /tmp/avicontroller/cocker_install.tar.gz
         mode: 0440
 
