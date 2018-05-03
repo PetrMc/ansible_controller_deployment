@@ -1,0 +1,23 @@
+- name: Install controller
+  gather_facts: True
+  hosts: controllers
+
+  tasks:
+    - name: Gather facts from new server
+      setup:
+        filter: ansible_default_ipv4.address
+
+    - name: Creates directory
+      file: path=/tmp/avicontroller/ state=directory
+
+    - name: Extract controller file
+      unarchive:
+        src: http://192.168.38.226/docker_install-17.2.9-9001.tar.gz
+        dest: /tmp/avicontroller
+        remote_src: yes
+
+    - name: Run Avi Controller setup
+      command: /tmp/avicontroller/avi_baremetal_setup.py -c -cc 4 -cm 12 -i {{ ansible_default_ipv4.address }}
+      args:
+        chdir: /tmp/avicontroller/
+

@@ -1,0 +1,32 @@
+- name: Update system and install docker
+  gather_facts: No
+  hosts: all
+
+  tasks:
+    - name: upgrade all packages
+      yum:
+        name: '*'
+        state: latest
+
+    - name: install VMware tools
+      yum:
+        name: open-vm-tools
+        state: latest
+
+    - name: Install NTP Server
+      yum:
+        name: ntp
+        state: latest
+
+    - name: install the latest version of Docker
+      yum:
+        name: docker
+        state: latest
+
+    - name: Start Docker service
+      service:
+         name: docker
+         state: started
+         enabled: yes
+      become: yes
+
