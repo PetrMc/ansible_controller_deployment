@@ -12,7 +12,7 @@
 
     - name: Extract controller file
       unarchive:
-        src: http://192.168.38.226/docker_install-17.2.9-9001.tar.gz
+        src: http://192.168.38.228/docker_install.tar.gz
         dest: /tmp/avicontroller
         remote_src: yes
 

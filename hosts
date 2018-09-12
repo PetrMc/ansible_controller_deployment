@@ -18,13 +18,18 @@
 # Ex 2: A collection of hosts belonging to the 'webservers' group
 
 [controllers]
-## 192.168.38.221
+192.168.38.221
 192.168.38.222
 192.168.38.223
 
 [ServiceEngines]
 192.168.38.224
 192.168.38.225
+
+[webservers]
+192.168.38.228
+192.168.38.229
+
 
 ## alpha.example.org
 ## beta.example.org

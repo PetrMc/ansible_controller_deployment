@@ -3,6 +3,16 @@
   hosts: all
 
   tasks:
+    - name: Add DNS addresses
+      lineinfile:
+        path: /etc/sysconfig/network-scripts/ifcfg-ens160
+        line: 'DNS1=8.8.8.8'
+
+    - name: Restart service httpd, in all cases
+      service:
+        name: network
+        state: restarted
+
     - name: upgrade all packages
       yum:
         name: '*'
